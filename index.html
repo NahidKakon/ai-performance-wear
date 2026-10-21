@@ -9,6 +9,84 @@
 Exploring premium technical outerwear through AI-generated product imagery, fabric studies, on-model styling, and cinematic campaign visuals.">
   <title>AI PERFORMANCE WEAR</title>
   <style>
+    /* NAVBAR — larger, taller and easier to read */
+.topbar {
+  min-height: 100px;
+  padding: 28px 0;
+  align-items: center;
+}
+
+.topbar .brand {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.topbar nav a {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-left: 28px;
+}
+
+/* HERO — make the text column and video the same height */
+.hero {
+  align-items: stretch;
+  min-height: 0;
+  margin-top: 12px;
+}
+
+.hero-copy {
+  justify-content: center;
+  padding: clamp(24px, 4vw, 58px);
+}
+
+.hero-media {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+/* MOBILE — retain readable navigation and a balanced hero */
+@media (max-width: 760px) {
+  .topbar {
+    min-height: 0;
+    padding: 22px 0;
+    gap: 18px;
+  }
+
+  .topbar nav a {
+    font-size: 13px;
+    margin: 0 18px 0 0;
+  }
+
+  .hero-copy {
+    min-height: 340px;
+    padding: 30px 24px;
+  }
+
+  .hero-media {
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero-media video {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+}
+    
     :root {
       --ink: #191c1c;
       --muted: #666b69;
