@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a1b">
+  <meta name="description" content="PRODUCT VISUALISATION · AI-GENERATED CAMPAIGNS · MOTION
+
+Exploring premium technical outerwear through AI-generated product imagery, fabric studies, on-model styling, and cinematic campaign visuals.">
+  <title>AI PERFORMANCE WEAR</title>
+  <style>
+    :root {
+      --ink: #191c1c;
+      --muted: #666b69;
+      --paper: #f4f3ef;
+      --white: #fff;
+      --line: rgba(25,28,28,.16);
+      --accent: #a6b5ad;
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: Inter, "Helvetica Neue", Arial, sans-s       erif; line-height: 1.5;
+    }
+    a { color: inherit; }
+    img, video { display: block; width: 100%; }
+    img { object-fit: cover; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 2px 0; border-bottom: 1px solid var(--line);
+      font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    }
+    .brand { font-weight: 800; letter-spacing: .22em; }
+    .topbar a { text-decoration: none; margin-left: 22px; }
+    .hero {
+      min-height: 48vh; display: grid; grid-template-columns: 1fr 1fr;
+      background: #d8d9d5; margin-top: 20px; overflow: hidden;
+    }
+    .hero-copy { padding: clamp(28px, 6vw, 84px); display: flex; flex-direction: column; justify-content: end; }
+    .eyebrow { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-size: clamp(42px, 7vw, 96px); line-height: .91; letter-spacing: -.07em; font-weight: 500; margin: 22px 0; }
+    h2 { font-size: clamp(30px, 4vw, 54px); line-height: 1; letter-spacing: -.055em; font-weight: 500; margin: 10px 0 18px; }
+    h3 { font-size: 19px; letter-spacing: -.025em; margin: 0 0 8px; font-weight: 600; }
+    p { margin: 0 0 14px; }
+    .lead { font-size: clamp(16px, 1.8vw, 20px); max-width: 480px; color: #414644; }
+    .hero-media { min-height: 520px; background: #c8cbc7; }
+    .hero-media img { height: 100%; min-height: 520px; }
+    .pill {
+      display: inline-block; align-self: start; border: 1px solid var(--ink);
+      border-radius: 30px; padding: 9px 13px; margin-top: 20px;
+      font-size: 10px; text-transform: uppercase; letter-spacing: .13em;
+    }
+    section { padding: clamp(80px, 4vw, 50px) 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 30px; margin-bottom: 34px; }
+    .section-head p { max-width: 620px; color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card { min-width: 0; }
+    .media { background: #dedfdb; overflow: hidden; position: relative; }
+    .media img { aspect-ratio: 4 / 5; }
+    .media.landscape img { aspect-ratio: 16 / 10; }
+    .media.square img { aspect-ratio: 1 / 1; }
+    .media video { aspect-ratio: 4 / 5; object-fit: cover; background: #222; }
+    .media.landscape video { aspect-ratio: 16 / 9; }
+    .card-copy { padding: 13px 2px 0; }
+    .label { font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 7px; }
+    .small { font-size: 13px; color: var(--muted); }
+    .note { padding: 18px 20px; border-left: 2px solid #84968d; background: rgba(255,255,255,.48); font-size: 13px; color: #4f5552; }
+    .process { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+    .process-item { border-top: 1px solid var(--ink); padding-top: 14px; }
+    .process-item::before { counter-increment: step; content: "0" counter(step); display: block; font-size: 11px; letter-spacing: .14em; margin-bottom: 20px; }
+    .closing { background: #202524; color: #f5f4ef; padding: clamp(45px, 7vw, 90px); }
+    .closing p { max-width: 650px; color: #c6cbc7; }
+    .footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 36px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .placeholder {
+      min-height: 260px; aspect-ratio: 4 / 5; display: grid; place-items: center;
+      text-align: center; padding: 24px; background: #dfe1dc; color: #5d625e;
+      border: 1px dashed #a7ada7; font-size: 12px;
+    }
+    .media.landscape .placeholder { aspect-ratio: 16 / 9; min-height: 200px; }
+    .file-help { margin-top: 12px; font-size: 12px; color: var(--muted); }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .topbar { align-items: flex-start; gap: 16px; flex-direction: column; }
+      .topbar a { margin: 0 18px 0 0; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-copy { padding: 36px 26px; min-height: 370px; }
+      .hero-media, .hero-media img { min-height: 340px; }
+      .section-head { grid-template-columns: 1fr; gap: 10px; }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .process { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; }
+    }
+    @media (max-width: 460px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .media img, .media video { aspect-ratio: 4 / 5; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" style="margin:0">AI PERFORMANCE WEAR</a>
+    <nav aria-label="Main navigation">
+      <a href="#outerwear">Outerwear</a>
+      <a href="#campaign">Campaign</a>
+      <a href="#process">Process</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="top">
+    <!-- HERO: replace images/hero-model-snow.jpg with your strongest winter-jacket image -->
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Independent AI creative concept · Performance wear</div>
+        <h5>AI PERFORMANCE WEAR<br>PRODUCT VISUALISATION · AI-GENERATED CAMPAIGNS · MOTION</h5>
+        <p class="lead">Exploring premium technical outerwear through AI-generated product imagery, fabric studies, on-model styling, and cinematic campaign visuals.</p>
+        <span class="pill">Concept campaign · 2026</span>
+      </div>
+      <div class="hero-media">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="images/hero-model-snow.jpg"
+    aria-label="Model wearing the extreme-weather jacket in snowy mountains"
+  >
+    <source
+      src="videos/model-walking-snow.mp4"
+      type="video/mp4"
+    >
+  </video>
+</div>
+
+      
+    </div>
+
+    <section id="product-films">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">02 / Product films</div>
+          <h2>Shape in<br>three dimensions.</h2>
+        </div>
+        <p>Slow vertical-axis rotations reveal each jacket's overall silhouette and construction. These short product films are designed to complement the on-model campaign imagery.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="media landscape">
+            <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="images/extreme-jacket-still.jpg"
+          >
+            <source
+              src="videos/extreme-jacket-rotation.mp4"
+              type="video/mp4"
+            >
+          </video>
+          </div>
+          <div class="card-copy">
+            <div class="label">Product film 01</div><h3>Extreme Weather / 360° study</h3>
+            <p class="small">A rotating product view highlighting the jacket's silhouette and technical design details.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media landscape">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="images/light-jacket-still.jpg"
+            >
+              <source
+                src="videos/light-jacket-rotation.mp4"
+                type="video/mp4"
+              >
+            </video>
+          </div>
+          <div class="card-copy">
+            <div class="label">Product film 02</div><h3>Light Winter / 360° study</h3>
+            <p class="small">A lighter outerwear concept presented through a clean, controlled rotation.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+
+    <section id="outerwear">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 / Product concepts</div>
+          <h2>Two jackets.<br>Two conditions.</h2>
+        </div>
+        <p>The collection explores two distinct outerwear directions: a protective expedition jacket for severe winter conditions, and a lighter technical layer designed for everyday movement. Both are original fictional concepts created for this portfolio project.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="media">
+            <img src="images/extreme-jacket-still.jpg" alt="Fictional extreme-weather jacket product still"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>EXTREME-WEATHER JACKET STILL<br><br>images/extreme-jacket-still.jpg</div>'">
+          </div>
+          <div class="card-copy">
+            <div class="label">01A / Expedition shell</div>
+            <h3>Extreme Weather</h3>
+            <p class="small">A sculpted protective silhouette, substantial insulation, and a restrained technical finish for severe winter conditions.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/light-jacket-still.jpg" alt="Fictional lightweight winter jacket product still"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>LIGHTWEIGHT JACKET STILL<br><br>images/light-jacket-still.jpg</div>'">
+          </div>
+          <div class="card-copy">
+            <div class="label">01B / Lightweight layer</div>
+            <h3>Light Winter</h3>
+            <p class="small">A clean, versatile layer focused on ease of movement, a refined fit, and understated everyday performance.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+    <section id="materials">
+      <div class="section-head">
+        <div><div class="eyebrow">03 / Material study</div><h2>Details matter.</h2></div>
+        <p>Material presentation is an important part of technical apparel storytelling. These close-ups focus on surface, texture, and the visual language of each fictional garment.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="media">
+            <img src="images/lightweight-fabric.jpg" alt="Close-up study of lightweight jacket fabric texture"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>LIGHTWEIGHT FABRIC DETAIL<br><br>images/lightweight-fabric.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Material 01</div><h3>Lightweight technical fabric</h3><p class="small">A close-up study of the lighter jacket's surface and texture.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/water-repellent-fabric.jpg" alt="Close-up study of water-repellent winter jacket fabric"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>WATER-REPELLENT FABRIC DETAIL<br><br>images/water-repellent-fabric.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Material 02</div><h3>Water-repellent fabric concept</h3><p class="small">A visual study of the winter jacket's technical surface. The image illustrates appearance, not laboratory-tested performance.</p></div>
+        </article>
+      </div>
+      <div class="note" style="margin-top:22px">Portfolio wording tip: unless the materials have been physically tested, describe them as “water-repellent fabric concept” or “technical fabric visualisation” rather than claiming verified waterproof performance.</div>
+    </section>
+
+    <section id="campaign">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / On-model campaign</div><h2>Designed for<br>real movement.</h2></div>
+        <p>The same fictional outerwear concepts are explored on male and female models, moving from a neutral product presentation to outdoor and training-inspired campaign scenes.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="media">
+            <img src="images/male-before.jpg" alt="Male model before the outfit-change concept"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>MALE MODEL — BEFORE<br><br>images/male-before.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Model study / 01</div><h3>Male model — base reference</h3><p class="small">A neutral starting image for the outfit-change workflow.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/male-wearing-jacket.jpg" alt="Male model wearing the fictional jacket"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>MALE MODEL — JACKET APPLIED<br><br>images/male-wearing-jacket.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Model study / 02</div><h3>Male model — jacket applied</h3><p class="small">The outfit-change result with the selected jacket concept.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/female-before.jpg" alt="Female model before the outfit-change concept"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>FEMALE MODEL — BEFORE<br><br>images/female-before.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Model study / 03</div><h3>Female model — base reference</h3><p class="small">A separate reference used to explore the concept on a second model.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/female-wearing-jacket.jpg" alt="Female model wearing the fictional jacket"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>FEMALE MODEL — JACKET APPLIED<br><br>images/female-wearing-jacket.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Model study / 04</div><h3>Female model — jacket applied</h3><p class="small">A second on-model interpretation of the fictional outerwear design.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="motion">
+      <div class="section-head">
+        <div><div class="eyebrow">05 / Campaign in motion</div><h2>From alpine<br>weather to city pace.</h2></div>
+        <p>Campaign variations place the outerwear in different contexts. The aim is to explore how a consistent product concept can support outdoor, urban, and training-focused creative directions.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="media landscape">
+            <div class="hero-media">
+            <img src="images/hero-model-snow.jpg" alt="Model wearing a fictional technical winter jacket in a snowy mountain landscape"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>HERO IMAGE<br><br>Replace with your strongest model-in-snow image:<br><code>images/hero-model-snow.jpg</code></div>'">
+          </div>
+          </div>
+          <div class="card-copy"><div class="label">Campaign film 01</div><h3>Extreme Weather / Alpine campaign</h3><p class="small">A model wearing the winter jacket in a snow-covered mountain environment.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/male-running-london-bridge.jpg" alt="Male model running outdoors at dawn on London Bridge"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>MALE MODEL RUNNING AT DAWN<br><br>images/male-running-london-bridge.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Campaign still 02</div><h3>Urban performance / Dawn run</h3><p class="small">A city-running concept exploring technical outerwear in an urban setting.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/male-walking-jacket.jpg" alt="Male model walking in the fictional lightweight jacket"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>MALE MODEL — WALKING SCENE<br><br>images/male-walking-jacket.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Campaign still 03</div><h3>Light Winter / Everyday styling</h3><p class="small">A calm, refined look focused on fit and silhouette.</p></div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="images/female-gym.jpg" alt="Female model exercising in a premium gym while wearing the fictional jacket"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>FEMALE MODEL — GYM SCENE<br><br>images/female-gym.jpg</div>'">
+          </div>
+          <div class="card-copy"><div class="label">Campaign still 04</div><h3>Movement / Training environment</h3><p class="small">A premium gym setting that expands the concept beyond outdoor winter scenes.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-head">
+        <div><div class="eyebrow">06 / Approach</div><h2>Concept to campaign.</h2></div>
+        <p>My approach combines AI-assisted image and video creation with an understanding of textile materials, garment construction, and careful visual presentation.</p>
+      </div>
+      <div class="process">
+        <div class="process-item"><h3>Develop the concept</h3><p class="small">Define the garment direction, intended environment, styling, and visual tone before generating campaign assets.</p></div>
+        <div class="process-item"><h3>Explore the product</h3><p class="small">Create product stills, material studies, and on-model imagery. Review silhouette, colour, texture, and visible construction details.</p></div>
+        <div class="process-item"><h3>Build the campaign</h3><p class="small">Develop motion and scene variations, then edit and present selected outputs as a coherent visual story.</p></div>
+      </div>
+      <div class="note" style="margin-top:28px">Background: MSc in Textile Technology with extensive professional experience in the textile industry, combined with hands-on AI-assisted visual production and video editing.</div>
+    </section>
+
+    <section>
+      <div class="closing">
+        <div class="eyebrow" style="color:#c6cbc7">Independent portfolio project</div>
+        <h2>Performance, presented with purpose.</h2>
+        <p>This fictional concept explores how AI-generated stills, product visualisation, and short-form motion can support premium performance-wear storytelling. It is an independent creative study and is not an official campaign for a real brand.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>FORM / MOTION — AI Performance Wear Concept</span>
+    <span>Independent concept · Not affiliated with any brand</span>
+  </footer>
+</body>
+</html>
